@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/coinListFragment">
+
+    <fragment
+        android:id="@+id/coinListFragment"
+        android:name="com.vinsol.loreal.cryptocurrency.presentation.coin_list.CoinListFragment"
+        android:label="fragment_coin_list"
+        tools:layout="@layout/fragment_coin_list">
+
+        <action
+            android:id="@+id/action_coinListFragment_to_coinDetailFragment"
+            app:destination="@id/coinDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/coinDetailFragment"
+        android:name="com.vinsol.loreal.cryptocurrency.presentation.coin_detail.CoinDetailFragment"
+        android:label="fragment_coin_detail"
+        tools:layout="@layout/fragment_coin_detail" />
+
+</navigation>
