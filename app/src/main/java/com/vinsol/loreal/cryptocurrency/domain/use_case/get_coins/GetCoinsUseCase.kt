@@ -8,8 +8,11 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 import java.io.IOException
+import javax.inject.Inject
 
-class GetCoinsUseCase(private val repository: CoinRepository) {
+class GetCoinsUseCase @Inject constructor(
+    private val repository: CoinRepository
+){
     operator fun invoke(): Flow<Resource<List<Coin>>> = flow {
         try {
             emit(Resource.Loading())
